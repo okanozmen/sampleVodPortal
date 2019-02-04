@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <img src='images/Container_288_Selected.jpg' style='position:fixed;top:0px;left:0px;width:30%;height:100%;z-index:-1;'>
+
+    <div id="posterList" class="accordian">
+        <ul>
+            <li id="poster1" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">Back to the Future / Sci-Fi / 1985</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/Back_to_the_Future_rerelease_movie_poster.jpg"/>
+                </a>
+            </li>
+            <li id="poster2" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">Godfather / Crime / 1972</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/MPW-39926.jpg"/>
+                </a>
+            </li>
+            <li id="poster3" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">A Beautiful Mind / Drama / 2001</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/a_beautiful_mind_1_13.jpg"/>
+                </a>
+            </li>
+            <li id="poster4" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">Inception / Sci-Fi / 2010</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/inception.jpg"/>
+                </a>
+            </li>
+            <li id="poster5" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">Star Wars: Episode 7 / Sci-Fi / 2015</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/star_wars_7_poster_by_oroster-d6tcc5k.jpg"/>
+                </a>
+            </li>
+            <li id="poster6" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">Amelie / Drama / 2001</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/cce_amelie_poulain_poster.jpg"/>
+                </a>
+            </li>
+            <li id="poster7" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">Fight Club / Action / 1999</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/fc.jpg"/>
+                </a>
+            </li>
+            <li id="poster8" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">The Good, The Bad and The Ugly / Western / 1966</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/good bad ugly P.png"/>
+                </a>
+            </li>
+            <li id="poster9" class="unselected" >
+                <div class="image_title" style = "display:none">
+                    <a href="#">The Incredibles / Animation / 2004</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/the-incredibles-poster.jpg"/>
+                </a>
+            </li>
+            <li id="poster10" class="unselected">
+                <div class="image_title" style = "display:none">
+                    <a href="#">Vanilla Sky / Sci-Fi / 2001</a>
+                    <div class="rating" align="center">
+                        <img src="images/stars.gif" alt="Rating" />
+                    </div>
+                </div>
+                <a href="#">
+                    <img src="posters/vanilla_sky.jpg"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="leftMenu" class="leftMenuClass">
+        <li>
+            <a href="#"  style="font-size: 25px; text-decoration: none">MENÜYE DÖN</a>
+        </li>
+        <li>
+            <a href="#"  style="font-size: 25px; text-decoration: none">BİLGİ&SEÇENEKLER</a>
+        </li>
+    </div>
+
+    <div id="moreInfo" class="infoClass">
+        <ul>
+            <p>name</p>
+            <p>genre</p>
+            <p>duration</p>
+            <p>cost</p>
+            <p>year</p>
+            <p>cast</p>
+        </ul>
+    </div>
+
+    <script>
+
+        var moviesArray = [];
+        var MovieData = function(id, name, genre, duration, cost, year, cast) {
+            this.id = id;
+            this.name = name;
+            this.genre = genre;
+            this.duration = duration;
+            this.cost = cost;
+            this.year = year;
+            this.cast = cast;
+        };
+
+        var loadMovies = function(){
+            var movie0 = new MovieData(0, "Back to the Future", "Sci-Fi", "120min", "3USD", "1985", "Director: Robert Zemeckis, Writers: Robert Zemeckis, Bob Gale "
+                    + "Stars: Michael J. Fox, Christopher Lloyd, Lea Thompson");
+            var movie1 = new MovieData(1, "Godfather", "Crime", "150min", "5USD", "1972", "Director: Francis Ford Coppola,"
+                    + "Writers: Mario Puzo (screenplay), Francis Ford Coppola (screenplay), "
+                    + "Stars: Marlon Brando, Al Pacino, James Caan");
+            var movie2 = new MovieData(2, "A Beautiful Mind", "Drama", "135min", "3USD", "2001", "Director: Ron Howard, Writers: Akiva Goldsman, Sylvia Nasar, "
+                    + "Stars: Russell Crowe, Ed Harris, Jennifer Connelly");
+            var movie3 = new MovieData(3, "Inception", "Sci-Fi", "148min", "3USD", "2010", "Director: Christopher Nolan, Writers: Christopher Nolan, "
+                    + "Stars: Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page");
+            var movie4 = new MovieData(4, "Star Wars - Episode 7", "Sci-Fi", "136min", "3USD", "2015", "Director: J.J. Abrams, Writers: Lawrence Kasdan, "
+                    + "Stars: Daisy Ridley, John Boyega, Oscar Isaac");
+            var movie5 = new MovieData(5, "Amelie", "Drama", "122min", "3USD", "2001", "Director: Jean-Pierre Jeunet, Writers: Guillaume Laurant, "
+                    + "Stars: Audrey Tautou, Mathieu Kassovitz");
+            var movie6 = new MovieData(6, "Fight Club", "Action", "139min", "3USD", "1999", "Director: David Fincher, Writers: Chuck Palahniuk, "
+                    + "Stars: Brad Pitt, Edward Norton, Meat Loaf");
+            var movie7 = new MovieData(7, "The Good The Bad and The Ugly", "Western", "161min", "3USD", "1966", "Director: Sergio Leone, Writers: Luciano  Vincenzoni, Sergio Leone, "
+                    + "Stars: Clint Eastwood, Eli Wallach, Lee Van Cleef");
+            var movie8 = new MovieData(8, "The Incredibles", "Animation", "115min", "3USD", "2004", "Director: Brad Bird, Writers: Brad Bird, "
+                    + "Stars: Craig T. Nelson, Samuel L. Jackson, Holly Hunter");
+            var movie9 = new MovieData(9, "Vanilla Sky", "Sci-Fi", "136min", "3USD", "2001", "Director: Cameron Crowe, Writers: Alejandro Amenabar, "
+                    + "Stars: Tom Cruise, Penelope Cruz, Cameron Diaz");
+
+            moviesArray.push(movie0);
+            moviesArray.push(movie1);
+            moviesArray.push(movie2);
+            moviesArray.push(movie3);
+            moviesArray.push(movie4);
+            moviesArray.push(movie5);
+            moviesArray.push(movie6);
+            moviesArray.push(movie7);
+            moviesArray.push(movie8);
+            moviesArray.push(movie9);
+        };
+
+        loadMovies();
+        
+
+        var selectedIndex = 0;
+        var posterListArray = document.getElementById("posterList").getElementsByTagName("li");
+
+        posterListArray[0].className = "selected";
+
+        var selectNextPoster = function(posterIndex){
+            if(selectedIndex < 9) {
+                posterListArray[selectedIndex].className = "unselected";
+                selectedIndex++;
+            }
+
+            posterListArray[selectedIndex].className = "selected";
+            posterListArray[selectedIndex];
+
+            setMoreInfoData(selectedIndex);
+        };
+
+        var selectPreviosPoster = function(posterIndex){
+            if(selectedIndex > 0) {
+                posterListArray[selectedIndex].className = "unselected";
+                selectedIndex--;
+            }
+
+            posterListArray[selectedIndex].className = "selected";
+            posterListArray[selectedIndex];
+
+            setMoreInfoData(selectedIndex);
+        };
+
+        var setMoreInfoData = function(posterIndex){
+            
+            var infoTexts = document.getElementById("moreInfo").getElementsByTagName("ul");
+            
+            infoTexts[0].getElementsByTagName("p")[0].innerHTML = moviesArray[posterIndex].name;
+            infoTexts[0].getElementsByTagName("p")[1].innerHTML = moviesArray[posterIndex].genre;
+            infoTexts[0].getElementsByTagName("p")[2].innerHTML = moviesArray[posterIndex].duration;
+            infoTexts[0].getElementsByTagName("p")[3].innerHTML = moviesArray[posterIndex].cost;
+            infoTexts[0].getElementsByTagName("p")[4].innerHTML = moviesArray[posterIndex].year;
+            infoTexts[0].getElementsByTagName("p")[5].innerHTML = moviesArray[posterIndex].cast;
+
+            
+        };
+
+        setMoreInfoData(selectedIndex);
+
+        document.onkeyup = function(key) {
+            switch (key.keyCode){
+                case 39:
+                    selectNextPoster(selectedIndex);
+                    break;
+                case 37:
+                    selectPreviosPoster(selectedIndex);
+                    break;
+
+            }
+        };
+
+    </script>
+</body>
+</html>
